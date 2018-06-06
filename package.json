@@ -1,7 +1,7 @@
 {
   "name": "@lukekarrys/audiobook",
   "description": "Take some wav files and try to make a chapterized mp3.",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "bin": {
     "audiobook": "./cli.js"
   },
@@ -60,7 +60,6 @@
     "semi": false,
     "singleQuote": true
   },
-  "private": true,
   "scripts": {
     "lint": "prettier --write '**/*.{js,md,json}' && eslint --fix . && pycodestyle .",
     "start": "./cli.js"
