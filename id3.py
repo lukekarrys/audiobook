@@ -1,5 +1,6 @@
 import json
 import sys
+import os.path
 from mutagen.id3 import (ID3, CTOC, CHAP, TIT2, TALB,
                          TPE1, COMM, USLT, APIC, CTOCFlags)
 
@@ -29,12 +30,13 @@ if len(sys.argv) > 2:
                          lang=u'eng',
                          text=data["episode_description"])
 
-    audio.delall('APIC')
-    audio["APIC"] = APIC(encoding=3,
-                         mime='image/jpeg',
-                         type=3,
-                         desc=u'Cover',
-                         data=open(data["podcast_cover"]).read())
+    if "podcast_cover" in data and os.path.isfile(data["podcast_cover"]):
+        audio.delall('APIC')
+        audio["APIC"] = APIC(encoding=3,
+                             mime='image/jpeg',
+                             type=3,
+                             desc=u'Cover',
+                             data=open(data["podcast_cover"]).read())
 
     audio.delall('CTOC')
     audio.add(CTOC(element_id=u"toc",

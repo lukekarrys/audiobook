@@ -93,7 +93,6 @@ const getFiles = async (
 ) =>
   (await fsp.readdir(dir))
     .filter(file => file.endsWith(EXTS.WAV))
-    .slice(0, 3)
     .map(file => ({
       path: path.join(dir, file),
       title: titleMatch(file),
