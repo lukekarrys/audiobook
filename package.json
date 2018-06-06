@@ -1,6 +1,6 @@
 {
   "name": "@lukekarrys/audiobook",
-  "description": "Take some wav files and try to make a chapterized mp3",
+  "description": "Take some wav files and try to make a chapterized mp3.",
   "version": "1.0.0",
   "bin": {
     "audiobook": "./cli.js"
